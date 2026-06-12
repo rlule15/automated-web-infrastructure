@@ -1,0 +1,42 @@
+#carInfo h2{
+    text-align: center;
+    margin-top: 50px;
+}
+#newCarForm {
+    width: 50%;
+    height: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd; 
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}    
+
+input[type="text"], select, input[type="file"] {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+button {
+    background-color: #008CBA; /* Green button */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005f7f; /* Darker green on hover */
+}
+
+#carAdded{
+    text-align: center;
+}
+

@@ -1,0 +1,58 @@
+# ==========================================
+# Ansible & Automation Specifics
+# ==========================================
+# Ignore local runtime files and retry files
+*.retry
+*.log
+
+# Ignore local inventory or secrets if they contain plain-text passwords
+# (Best to keep production host files out of source control)
+inventory.ini
+secrets.yml
+secrets.json
+
+# If you use Ansible Vault, you can commit encrypted files, 
+# but NEVER commit the plain-text vault password file!
+.ansible-vault-password
+vault_password.txt
+
+# ==========================================
+# Web Application & Local Application Files
+# ==========================================
+# Ignore local application config files containing raw DB connection info
+# (Your config.php should be generated via your Ansible Jinja2 templates instead)
+config.php
+
+# Ignore user-uploaded assets, temporary sessions, or local caches
+/var/www/html/uploads/
+roles/web_server/files/website/resources/images
+.phpunit.result.cache
+
+# ==========================================
+# Operating System & Environment Specs
+# ==========================================
+# Windows thumbnail and folder metadata
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux / WSL metadata files
+.DS_Store
+.directory
+
+# ==========================================
+# Text Editors & IDEs
+# ==========================================
+# VS Code directory configuration and extensions
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# JetBrains / IntelliJ / PyCharm / PhpStorm
+.idea/
+
+# Vim swap/backup files
+*.swp
+*~

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resources/css/loginPageStyles.css">
+    <title>Sign Up</title>
+</head>
+<body>
+    <div id="heading">
+        <h1>Sign Up</h1>
+        <div id="btnStyle">
+            <form>
+                <a href="index.php"><input type="button" value="Home Page" id="loginBtn"></a>
+            </form>
+        </div>
+    </div>
+    
+    <div id="SignUpInfo">
+        <form method="post" action="resources/php/authentication/signup.php" id="userSignin">
+            <div id="userCred">
+                <label>First Name: <input type="text" name="firstName"></label>
+                <label>Last Name: <input type="text" name="lastName"></label>
+                <label>Username: <input type="text" name="username"></label>
+                <label>Password: <input type="password" name="password"></label>  
+            </div>
+            <div id="userActions">
+                <button type="submit">Sign Up</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

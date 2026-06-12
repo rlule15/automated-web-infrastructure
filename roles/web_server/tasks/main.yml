@@ -1,0 +1,31 @@
+- name: Install web server packages
+  ansible.builtin.apt:
+    name:
+      - apache2
+      - libapache2-mod-php
+    state: latest
+  when: ansible_facts['distribution'] == 'Ubuntu'
+
+- name: Enable and start Apache service
+  ansible.builtin.service:
+    name: apache2
+    state: started
+  when: ansible_facts['distribution'] == 'Ubuntu'
+
+- name: Copy folder with website files to the web server
+  ansible.builtin.copy:
+    src: website/
+    dest: /var/www/html/
+    owner: www-data
+    group: www-data
+    mode: '0755' # owner can read/write/execute, group and others can read/execute
+  when: ansible_facts['distribution'] == 'Ubuntu'
+
+- name: Create config.php file from template
+  ansible.builtin.template:
+    src: config.php.j2
+    dest: /var/www/html/resources/php/config.php
+    owner: www-data
+    group: www-data
+    mode: '0644' # owner can read/write, group and others can read
+  when: ansible_facts['distribution'] == 'Ubuntu'

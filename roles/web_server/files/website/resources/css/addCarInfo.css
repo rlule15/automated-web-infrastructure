@@ -1,0 +1,98 @@
+img{
+    width: 450px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+#infoType{
+    text-align: center;
+    margin-top: 30px;
+}
+
+#issueMeintenanceForm{
+    width: 50%;
+    height: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+} 
+
+input[type="text"], select, input[type="number"], input[type="date"] {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+button , a{
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Styling for the service table */
+#issueTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+
+#issueTable th, #issueTable td {
+    text-align: center;
+    padding: 15px;
+    border: 1px solid #bbb;
+}
+
+#issueTable th {
+    background-color: #f4f4f4;
+}
+
+
+#issueTable input[type="submit"] {
+    padding: 8px 10px;
+    cursor: pointer;
+    text-align: center;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#issueTable td {
+    background-color: #f4f4f4;
+}
+
+#issueTable td form {
+    display: inline-block;
+}
+
+#userNote {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+
+
+
+
+
+
+
+

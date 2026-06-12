@@ -1,0 +1,98 @@
+/* all pages basic style */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #D3D3D3;
+}
+
+#heading, #currentCar {
+    background-color: #708090;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    
+}
+
+#options {
+
+    padding-top: 5px;
+    background-color: #B2BBA1;
+    height: 125px;
+}
+#options h2{
+    text-align: center;
+}
+
+#btnStyle {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+input[type="button"], button {
+    padding: 10px 20px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="button"]:hover {
+    background-color: #005f7f;
+}
+
+/* login page style */
+#logInInfo, #userCred, #userInfo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#userActions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-left: 10px;
+}
+
+#userLogin{
+    display: flex;
+    align-items: center; 
+    flex-wrap: nowrap; 
+}
+
+/* main page imag style */
+#addedCars {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+#addedCars figure {
+    margin-right: 15px; 
+    margin-bottom: 15px;
+    text-align: center; 
+}
+
+#addedCars img {
+    width: 400px;
+    height: auto;
+    display: block;
+}
+#addedCars figcaption {
+    font-family: 'Arial', sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    padding: 10px;
+    margin-top: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+

@@ -1,0 +1,78 @@
+/* loginPageStyles.css */
+
+/* Basic styling for body to center the form in the middle of the screen */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #D3D3D3;
+    flex-direction: column; /* This will stack the title and form vertically */
+}
+
+/* Center heading */
+#heading {
+    background-color: #708090;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    font-size: 24px;
+    margin-bottom: 20px; /* Space between title and form */
+}
+
+/* Container for login form with red border */
+#logInInfo, #SignUpInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    padding: 20px;
+    background-color: #FFF;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style input fields and labels */
+#userCred {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#userCred label, #userCred p {
+    margin: 0;
+    font-weight: bold;
+}
+
+#userCred input[type="text"],
+#userCred input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Buttons styling */
+#userActions {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+button, input[type="button"] {
+    padding: 10px 20px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover, input[type="button"]:hover {
+    background-color: #005f7f;
+}
