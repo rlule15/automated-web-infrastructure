@@ -3,7 +3,9 @@
     name:
       - apache2
       - libapache2-mod-php
+      - php-mysql
     state: latest
+  notify: restart_apache
   when: ansible_facts['distribution'] == 'Ubuntu'
 
 - name: Enable and start Apache service
@@ -18,7 +20,8 @@
     dest: /var/www/html/
     owner: www-data
     group: www-data
-    mode: '0755' # owner can read/write/execute, group and others can read/execute
+    mode: "0755" # owner can read/write/execute, group and others can read/execute
+  notify: restart_apache
   when: ansible_facts['distribution'] == 'Ubuntu'
 
 - name: Create config.php file from template
@@ -27,5 +30,5 @@
     dest: /var/www/html/resources/php/config.php
     owner: www-data
     group: www-data
-    mode: '0644' # owner can read/write, group and others can read
+    mode: "0644" # owner can read/write, group and others can read
   when: ansible_facts['distribution'] == 'Ubuntu'

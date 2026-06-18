@@ -1,0 +1,52 @@
+- name: Install MySql server
+  ansible.builtin.apt:
+      name:
+          - mysql-server
+          - python3-pymysql
+      state: latest
+  when: ansible_facts["distribution"] == "Ubuntu"
+
+- name: Enable legacy mysql_native_password plugin
+  ansible.builtin.lineinfile:
+      path: /etc/mysql/mysql.conf.d/mysqld.cnf
+      line: "mysql_native_password=ON"
+      insertafter: "^\\[mysqld\\]"
+  notify: restart_mysql
+
+- name: Create user
+  ansible.mysql.mysql_user:
+      name: "{{db_user}}"
+      password: "{{ db_pass }}"
+      priv: "{{db_name}}.*:ALL"
+      state: present
+      login_unix_socket: /var/run/mysqld/mysqld.sock
+
+- name: Create application database
+  ansible.mysql.mysql_db:
+      name: cars_tracker
+      encoding: utf8mb4
+      collation: utf8mb4_unicode_ci
+      state: present
+      login_unix_socket: /var/run/mysqld/mysqld.sock
+
+- name: Check if schema has been applied
+  ansible.mysql.mysql_query:
+      login_db: cars_tracker
+      query: "SHOW TABLES LIKE 'users'"
+      login_unix_socket: /var/run/mysqld/mysqld.sock
+  register: tables_checked
+
+- name: Copy schema to db server
+  ansible.builtin.copy:
+      src: cars_tracker.sql
+      dest: /tmp/schema.sql
+      mode: "0644"
+  when: tables_checked.query_result[0] | length == 0
+
+- name: Import schema
+  ansible.mysql.mysql_db:
+      name: cars_tracker
+      state: import
+      target: /tmp/schema.sql
+      login_unix_socket: /var/run/mysqld/mysqld.sock
+  when: tables_checked.query_result[0] | length == 0

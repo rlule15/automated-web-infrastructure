@@ -35,6 +35,7 @@ roles/web_server/files/website/resources/images
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+.sql
 
 # Linux / WSL metadata files
 .DS_Store
